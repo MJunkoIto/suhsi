@@ -160,8 +160,8 @@ aside#lang-switch a:hover {
   position: relative;
   left: 23%;
   background: #DBDBDB;
-  margin: 0px 0px 200px;
-  padding: 60px 30px 90px;
+  margin: 0px 0px 110px;
+  padding: 60px 30px 118px;
   max-width: 600px;
   text-align: left;
 }
@@ -225,7 +225,7 @@ aside#lang-switch a:hover {
 #seasonalmenu {
   position: relative;
   background: #333333;
-  padding: 10px 0px 10px;
+  padding: 20px 0px 40px;
   text-align: center;
 }
 
@@ -366,7 +366,7 @@ aside#lang-switch a:hover {
   /* 当店のこだわり */
 #speciality {
   background: #333333;
-  padding: 30px 20px 100px 20px;
+  padding: 15px 20px 100px 15px;
   text-align: center;
 }
 
@@ -448,7 +448,7 @@ height: 40%;
 /*店舗*/
 #access {
   margin: 0px 0px 200px;
-  padding: 70px 30px 90px;
+  padding: 70px 30px 50px;
   display: flex;
     flex-direction: column; /* 縦方向に要素を並べる */
     align-items: center; /* 横方向の中央揃え */
@@ -494,8 +494,8 @@ height: 40%;
 
 /*予約reserve*/
 #reserve {
-  margin: 0px 0px 100px;
-  padding: 70px 30px 50px;
+  margin: 0px 0px 50px;
+  padding: 50px 30px 50px;
   display: flex;
     flex-direction: column; /* 縦方向に要素を並べる */
     align-items: center; /* 横方向の中央揃え */
@@ -506,7 +506,7 @@ height: 40%;
 
  #reserve .ttl {
   margin-bottom: 50px;
-  margin: 0px 500px 50px;
+  margin: 0px 500px 70px;
   color: #ffffff;
  }
 
@@ -527,57 +527,65 @@ height: 40%;
 #reserve .ttl :after {
   right: 0;
 }
-
-/*ボタン装飾*/
-/*主な共通部分は省略*/
-.simple-putline {
-  border: 2px solid #333;
-  padding: 40px 170px 40px 170px;
-  margin: 50px 50px;
-  text-decoration: none;
-  color: black;
-  font-size: 30px;
-}
-
-/**予約ボタンの下になっている。マージンを大胆に入れても動かない */
-#reserve .reserve-text {
-  margin: 100px 100px;
-}
-
-
 /*
-a.btn {
-  border: 1px solid #000;
-  border-radius: 0;
-  background: #fff;
-  padding: 40px 170px 40px 170px;
-  margin: 20px auto;
-  text-align: center;
-  text-decoration: none;
-  color: black;
+
+color: black;
+font-size: 30px;
+*/
+/*主な共通部分は省略*/
+/* LINE007 */
+
+.button_line004 a {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 50px;
+  max-width: 200px;
+  padding: 30px 110px 25px 110px;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
   font-size: 30px;
+  text-decoration: none;
 }
 
-a.btn:before {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  content: '';
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  border: 1px solid #000;
+.button_line004 a:before,
+.button_line004 a:after {
+content: '';
+width: 18px;
+height: 18px;
+border-color: #ffffff;
+box-sizing: border-box;
+border-style :solid;
+display: block;
+position: absolute;
+transition: all 0.3s ease-in-out;
+}
+.button_line004 a:before {
+top: -6px;
+left: -6px;
+border-width: 2px 0 0 2px;
+z-index: 5;
+}
+.button_line004 a:after {
+bottom: -6px;
+right: -6px;
+border-width: 0 2px 2px 0;
+}
+.button_line004 a:hover:before,
+.button_line004 a:hover:after {
+width: calc(100% + 12px);
+height: calc(100% + 12px);
+border-color: #ffffff;
+}
+.button_line004 a:hover {
+color: #000000;
+background-color: #ffffff;
+border-color: #ffffff;
 }
 
-a.btn:hover:before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: '';
-}
-  */
+
 
 /*フッター*/
 footer {
@@ -587,3 +595,45 @@ footer {
   color: #ffffff;
   padding: 16px;
 }
+
+
+/* トップへ戻るボタン装飾  */
+#page_top {
+  z-index: 1;
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  background: rgba(102, 102, 102, 0.5) no-repeat;
+}
+
+
+#page_top a::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  color: #fff;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f077';
+  font-size: 25px;
+  text-align: center;
+  /*デフォルトで非表示にする*//*デフォルトで非表示にする*/
+ /*
+  opacity: 0;
+  visibility: hidden;
+*/
+}
+
+/* デフォルトで非表示のあと::afterか::hoverで表示される予定だったが失敗*/
+#page_top a:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
