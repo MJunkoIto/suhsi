@@ -254,6 +254,22 @@ aside#lang-switch a:hover {
   max-width: 90%;  
 }
 
+/* h3の下のマージン消す・h3と品物の羅列との間の余白を消したい */
+/*
+.content_inner .ttl-small {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 24px 0px 0px;
+}
+*/
+
+#speciality-wrap .text h3 {
+  margin: 24px 0px 0px;
+}
+
 /* 季節のおすすめの画像と説明部分 */
 .item-1 {
   display: flex;
@@ -377,20 +393,20 @@ aside#lang-switch a:hover {
   color: #ffffff;
 }
 
-/* 各セクションのレイアウト */
+/* 各セット(写真＆文章)のレイアウト */
 .speciality-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #333;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  display: relative;   /*親要素に対して子要素絶対位置＝親要素は自由を効かせるためにrelative*/
+  margin-bottom: 80px; /*要素が重ならないように余白*/
 }
 
-/*写真と文字１,３目*/
+/*写真と文章それぞれのレイアウト*/
 .speciality-wrap:nth-child(1) {
   flex-direction: row-reverse;
+}
+
+.speciality-wrap:nth-child(2) {
+  left: auto;
+  right: 0;
 }
 
 .speciality-wrap:nth-child(3) {
@@ -400,31 +416,33 @@ aside#lang-switch a:hover {
 /* テキストのスタイル */
 .text {
   width: 50%;
-  padding: 64px;
+  padding: 30px 40px;
   background-color: #ffffff;
   color: black;
   text-align: left;
+  position: absolute;
+  left: 0;
+  bottom: -50px;
 }
 
 #speciality .text h4{
   font-size: 20px;
 }
 
-/* 画像・動画のスタイル */
 .img {
-  /* width: 100%; */
-  display: absolute;
-  /*justify-content: center;*/
+  width: 60%;
 }
 
-#speciality .img img{
-max-width: 80%;
-height: 40%;
+.img > img {
+  width: 100%;
+  height: auto;
+  max-width: none;
 }
 
-.img video {
-  max-width: 80%;
-  height: 40%;
+.img > video {
+  width: 100%;
+  height: auto;
+  max-width: none;
 }
 
 
@@ -625,11 +643,6 @@ footer {
   content: '\f077';
   font-size: 25px;
   text-align: center;
-  /*デフォルトで非表示にする*//*デフォルトで非表示にする*/
- /*
-  opacity: 0;
-  visibility: hidden;
-*/
 }
 
 /* デフォルトで非表示のあと::afterか::hoverで表示される予定だったが失敗

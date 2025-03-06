@@ -19,6 +19,7 @@ jQuery(function ($) {
   slide();
 });
 
+/* ハンバーガーメニュー作成のために入れたが失敗 */
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger-menu");
   const navContainer = document.querySelector(".nav-container");
