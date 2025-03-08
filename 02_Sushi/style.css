@@ -254,17 +254,8 @@ aside#lang-switch a:hover {
   max-width: 90%;  
 }
 
-/* h3の下のマージン消す・h3と品物の羅列との間の余白を消したい */
-/*
-.content_inner .ttl-small {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1em;
-  font-size: 24px;
-  font-weight: normal;
-  margin: 24px 0px 0px;
-}
-*/
+
+
 
 #speciality-wrap .text h3 {
   margin: 24px 0px 0px;
@@ -355,7 +346,7 @@ aside#lang-switch a:hover {
 .content_inner .ttl-small {
     position: relative;
     display: inline-block;
-    margin-bottom: 1em;
+    margin-bottom: 0;
     font-size: 24px;
     font-weight: normal;
   }
@@ -395,28 +386,31 @@ aside#lang-switch a:hover {
 
 /* 各セット(写真＆文章)のレイアウト */
 .speciality-wrap {
-  display: relative;   /*親要素に対して子要素絶対位置＝親要素は自由を効かせるためにrelative*/
+  position: relative;   /*親要素に対して子要素絶対位置＝親要素は自由を効かせるためにrelative*/
   margin-bottom: 80px; /*要素が重ならないように余白*/
 }
 
 /*写真と文章それぞれのレイアウト*/
 .speciality-wrap:nth-child(1) {
   flex-direction: row-reverse;
+  left: 80px;
 }
 
 .speciality-wrap:nth-child(2) {
   left: auto;
   right: 0;
+  left: 80px;
 }
 
 .speciality-wrap:nth-child(3) {
   flex-direction: row-reverse;
+  left: 80px;
 }
 
 /* テキストのスタイル */
 .text {
-  width: 50%;
-  padding: 30px 40px;
+  width: 30%;
+  padding: 60px;
   background-color: #ffffff;
   color: black;
   text-align: left;
@@ -425,20 +419,26 @@ aside#lang-switch a:hover {
   bottom: -50px;
 }
 
+.text:nth-child(2) {
+  position: flex;
+  left: 50px;
+}
+
+
+
 #speciality .text h4{
   font-size: 20px;
 }
 
 .img {
-  width: 60%;
+  width:50%;
+  height: auto;  /* 写真の高さを短くしたいが、これ以上小さくならない。本当に小さくなっているのかも？？？ */
 }
 
 .img > img {
   width: 100%;
-  height: auto;
-  max-width: none;
+  height: 40%;  /* 写真の高さを短くしたいが、これ以上小さくならない。どこを触ればいい？？(前はauto) */
 }
-
 .img > video {
   width: 100%;
   height: auto;
