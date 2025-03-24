@@ -1,5 +1,5 @@
 $(function(){
-    var pagetop = $('#page-top');
+    var pagetop = $('#page_top');
     pagetop.hide();
     $(window).scroll(function () {
        if ($(this).scrollTop() > 100) {
