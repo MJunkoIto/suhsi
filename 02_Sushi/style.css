@@ -10,7 +10,10 @@
     background-position: center center;
 }
 
-/* 全体にかける */
+/*..........................................
+
+全体にかける 
+............................................*/
 html {
     font-size: 100%;
 }
@@ -27,6 +30,10 @@ body {
   width: 0 auto;
 }
 
+/*........................................
+
+トップページ
+..........................................*/
 
 /* トップページ/ヒーローセクションここから */
 .hero-div {
@@ -52,6 +59,7 @@ body {
   text-align:center;
   margin: 0px 0px 20px;
 }
+
 /*　ナビゲーション　*/
 #nav ul { 
    display: flex;
@@ -149,7 +157,10 @@ aside#lang-switch a:hover {
 }
 
 
-/* ここからご挨拶 */
+/*......................................
+
+ご挨拶 #message
+........................................ */
 /* ご挨拶全体 */
 #message {
   background: #DBDBDB;
@@ -159,11 +170,15 @@ aside#lang-switch a:hover {
   text-align: left;
 }
 
+.ttl-wrap {
+  text-align: center;
+}
+
 /* タイトル装飾を全体に効かせる */
 .ttl {
      position: relative;
      text-align: center;
-     margin: 0px 170px;
+     margin: 0px ;
      padding: 20px 70px;
      margin-bottom: 40px;
      position: relative;
@@ -215,7 +230,10 @@ aside#lang-switch a:hover {
   line-height: 3em;
 }
 
-/* 季節のおすすめ */
+/*................................
+
+季節のおすすめ #seasonalmenu
+..................................*/
 #seasonalmenu {
   position: relative;
   background: #333333;
@@ -268,7 +286,7 @@ aside#lang-switch a:hover {
  }
 
 .item-1 > div,
-.item-2 > div{
+.item-2 > div {
      width: 50%;
     display: flex;
     align-items: center;
@@ -299,7 +317,11 @@ aside#lang-switch a:hover {
 }
 
 
-/* お品書き */
+/* .................................
+
+お品書き #menu
+
+...................................*/
 #menu {
   background: #DBDBDB;
   margin: 100px auto 100px;
@@ -346,10 +368,14 @@ aside#lang-switch a:hover {
 
 .content_inner .table ul{
    margin-top: 5px;
-}
 
+   
+/*................................
+  
+当店のこだわり #speciality
+  
+.................................*/
 
-  /* 当店のこだわり */
 #speciality {
   background: #333333;
   padding: 15px 20px 100px 15px;
@@ -396,16 +422,16 @@ aside#lang-switch a:hover {
   background-color: #ffffff;
   color: black;
   text-align: left;
-  position: absolute;
+  position: relative; /*前はabsolute*/
   left: 5%;
   bottom: -50px;
   box-sizing: border-box;
 }
 
 .speciality-wrap:nth-child(2) .text{
-  position: absolute;
-  right: 5%;
-  left: auto;
+  position: relative;   /*前はabsolute*/
+  right: auto;
+  left: 50%;
 }
 
 
@@ -415,13 +441,13 @@ aside#lang-switch a:hover {
 }
 
 .img {
-  width:60%;
+  width:70%;
   height: auto;  /* 写真の高さを短くしたいが、これ以上小さくならない。本当に小さくなっているのかも？？？ */
 }
 
 .img > img {
-  width: 100%;
-  height: 40vh;  /* 写真の高さを短くしたいが、これ以上小さくならない。どこを触ればいい？？(前はauto)%は効かない。%は親要素の割合 */
+  width: 80%;
+  height: 50%;  /* 写真の高さを短くしたいが、これ以上小さくならない。どこを触ればいい？？(前はauto)%は効かない。%は親要素の割合 */
   object-fit: cover;
 }
 .img > video {
@@ -449,7 +475,11 @@ aside#lang-switch a:hover {
   right: 0;
 }
 
-/*店舗*/
+/*................................
+
+店舗  #access
+
+..................................*/
 #access {
   margin: 0px 0px 200px;
   padding: 70px 30px 50px;
@@ -490,6 +520,10 @@ aside#lang-switch a:hover {
   right: 0;
 }
 
+#address {
+  width: 100%;
+}
+
 /* インスタ画像*/
 .insta img {
   width: 40px;
@@ -497,7 +531,10 @@ aside#lang-switch a:hover {
   margin: 40px auto;
 }
 
-/*予約reserve*/
+/*......................................
+
+予約  #reserve
+.........................................*/
 #reserve {
   margin: 0px 0px 50px;
   padding: 50px 30px 50px;
@@ -587,7 +624,10 @@ border-color: #ffffff;
 
 
 
-/*フッター*/
+/*......................................
+
+フッター
+.......................................*/
 footer {
   text-align: center;
   background-color: black;
@@ -626,13 +666,6 @@ footer {
   text-align: center;
 }
 
-/* デフォルトで非表示のあと::afterか::hoverで表示される予定だったが失敗
-#page_top a:hover {
-  opacity: 1;
-  visibility: visible;
-}
-*/
-
 /* ハンバーガーメニューのデザイン */
 .hamburger-menu {
   display: none; /* PCでは非表示 */
@@ -654,7 +687,12 @@ footer {
   transition: 0.4s;
 }
 
-/* スマホ用ナビゲーションメニュー */
+/*..........................................
+
+スマホ用ナビゲーションメニュー 
+
+............................................*/
+
 @media screen and (max-width: 768px) {
   .hamburger-menu {
       display: block;
@@ -711,19 +749,97 @@ footer {
       transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+/*...........................................
 
+レスポンシブ対応
+
+.............................................*/
 @media screen and (max-width: 768px) {
-      #message, #menu {
-        position: static;
-        padding-top: 40px;
-        padding-bottom: 40px;
-      }
-      
-      #seasonalmenu {
-      display: colum;
-      }
 
-      #spaciality {
+  .bg-color {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    width: 0 auto;
+}
+
+    .hero-class img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+   .text {
+    width: 100%;
+    left: 0;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+   }
+   
+   .img > img {
+    height: 50vw;
+   }
+
+   .speciality-wrap:nth-child(2) .text {
+    position: relative;
+    right: 0;
+    left: auto;
+}
+    
+      #speciality .item-1 {
         display: flex;
-      }
-  }
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 20px;
+        padding-bottom: 0px;
+        color: #ffffff;
+    }
+
+    #speciality .item-2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 20px;
+        padding-bottom: 0px;
+        color: #ffffff;
+    }
+
+    .speciality-wrap .img {
+          width: 100%;
+    }
+
+    .item-1, .item2 {
+      flex-direction: column;
+    } 
+
+    .item-1 > div, .item-2 > div {
+      width: 100%;
+    }
+
+    .item-1 > div:nth-child(2),
+    .item-2 > div:nth-child(2) {
+      margin-bottom: 40px;
+    }
+
+
+
+    .ttl {
+      display: inline-block;
+      margin: 0px auto;
+      width: auto;
+    }
+
+    iframe {
+width: 100%;
+filter: grayscale(100%); 
+    }
+
+    .row {           /*access 店舗の中のクラス、flexboxの子要素100%つけないと全幅にならない*/
+      width: 100%;
+    }
+
+    #reserve a {
+      padding: 24px 25px;
+      margin: 15px 25px;
+    }
+}
